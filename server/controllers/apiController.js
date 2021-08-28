@@ -86,7 +86,7 @@ const sendSendgridEmail = asyncHandler(async (req, res) => {
   try {
     const msg = {
       to: email,
-      from: 'cooper6101@gmail.com',
+      from: 'admin@mnmlhealth.com',
       subject: `Your Email from Trey's Portfolio Site`,
       text: `Hey ${firstName} ${lastName}! Thanks for using my sendgrid demo  form. Here's your message ${message}`,
       html: `<strong>Hey ${firstName} ${lastName}! Thanks for using my sendgrid demo  form. Here's your message ${message}</strong>`
@@ -98,6 +98,7 @@ const sendSendgridEmail = asyncHandler(async (req, res) => {
     });
   } catch (error) {
     console.log(error);
+    console.error(error.response.body);
     res.status(404);
     throw new Error(
       'Something went wrong. Please contact me so I can fix it at cooper6101@gmail.com'
