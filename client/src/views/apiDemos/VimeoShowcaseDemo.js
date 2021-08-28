@@ -62,6 +62,7 @@ const VimeoShowcaseDemo = () => {
                 <Vimeo
                   video={showcase?.data[index - 1]?.uri?.substring(8)}
                   autoplay
+                  responsive
                 />
                 <p className='title text-center'>
                   {showcase?.data[index - 1]?.name}
